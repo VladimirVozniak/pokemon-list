@@ -11,7 +11,10 @@ export const AuthList = () => {
             <GoogleLogin
                 clientId={process.env.REACT_APP_GOOGLE_CLIENT_ID}
                 onSuccess={async data => await signInViaAuth(data)}
-                onFailure={() => message.error('Google login error', 3)}
+                onFailure={(err) => {
+                    console.error(err)
+                    message.error('Google login error', 3)
+                }}
                 isSignedIn={false}
                 render={renderProps => (
                     <button className="btn auth_btn" onClick={renderProps.onClick}>
