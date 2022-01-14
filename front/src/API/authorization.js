@@ -38,7 +38,7 @@ export const standardSignIn = async (username, password, checked) => {
 
 export const signInViaAuth = async (data) => {
     try {
-        await axios.post('http://localhost:3000/auth',
+        await axios.post('api/auth',
             {id: data.googleId, mail: data.yu.nv},
             {withCredentials: true})
         document.location.href = '/'
