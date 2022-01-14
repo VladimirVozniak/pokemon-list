@@ -7,7 +7,7 @@ const app = express()
 require('dotenv').config()
 
 try {
-    const PORT = process.env.DB_PORT || 3002
+    const PORT = process.env.PORT || 3002
     const URL = process.env.DB_URL
 
     const apiRoutes = require("./routes")
