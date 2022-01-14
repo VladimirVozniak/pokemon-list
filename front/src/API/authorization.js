@@ -38,12 +38,12 @@ export const standardSignIn = async (username, password, checked) => {
 
 export const signInViaAuth = async (data) => {
     try {
-        await axios.post('api/auth',
+        await axios.post('http://localhost:3000/auth',
             {id: data.googleId, mail: data.yu.nv},
             {withCredentials: true})
         document.location.href = '/'
     } catch (e) {
-        message.error({content: 'Server error', duration: 3})
+        message.error('Server error', 3)
     }
 }
 
