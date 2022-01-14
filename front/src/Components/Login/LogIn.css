@@ -1,0 +1,209 @@
+.background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.auth_window {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: fit-content;
+    border: 2px solid gray;
+    border-radius: 10px;
+    padding: 10px 18px 18px;
+    margin: 100px auto 10px;
+    background: white;
+    user-select: none;
+}
+
+.login-methods {
+    display: flex;
+}
+
+.first-login-method, .second-login-method {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 160px;
+}
+
+.first-login-method {
+    justify-content: center;
+}
+
+.vertical-dividing-line {
+    width: 2px;
+    background: repeating-linear-gradient(
+            transparent,
+            transparent 5px,
+            white 5px,
+            white 10px
+    ),
+    linear-gradient(
+            to bottom,
+            white,
+            #b6b6b6 25px,
+            #b6b6b6 65px,
+            #b6b6b6 100px,
+            white
+    );
+    margin: 0 10px
+}
+
+h1 {
+    color: #3d3d3d;
+    margin-bottom: 5px
+}
+
+button {
+    margin: 5px;
+    border-radius: 6px;
+    height: 35px;
+    font-weight: bold;
+    font-size: 17px;
+    color: #363636;
+}
+
+.btn {
+    border-radius: 5px;
+    border: 2px solid #7f7f80;
+    box-shadow: 0 0 3px 0 #c5c5c5;
+    background: none;
+    padding: 2px;
+    width: 95%;
+    height: 31px;
+    filter: saturate(0.7);
+    transition: 0.1s ease-in-out;
+}
+
+.btn:hover {
+    cursor: pointer;
+}
+
+.signIn {
+    width: 95%;
+    margin-top: 5px
+}
+
+.singUp {
+    border: 2px solid gray;
+    width: 98%;
+}
+
+.icon_social {
+    display: flex;
+    align-items: center;
+    border: 2px solid gray;
+    border-radius: 6px;
+    width: 96%;
+    background: #cacaca;
+    height: 30px;
+    justify-content: space-between;
+    padding-left: 5px;
+}
+
+.icon {
+    width: 27px;
+    object-fit: contain;
+    padding: 0;
+    margin: 0;
+    border-radius: 10px;
+    position: relative;
+    left: -4px;
+}
+
+.horizontal-dividing-line {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.line {
+    width: 100%;
+    height: 2px;
+    background-color: gray;
+    position: relative;
+    top: 7px;
+}
+
+.horizontal-dividing-line_text {
+    position: relative;
+    background: white;
+    width: 32px;
+    text-align: center;
+    top: -9px;
+    color: #474747;
+    font-weight: bold;
+}
+
+input {
+    margin: 4px 0;
+    width: 95%;
+    font-weight: bold;
+    border: 2px solid gray;
+    border-radius: 5px;
+    height: 30px;
+    padding-left: 5px;
+}
+
+.checkbox-container {
+    display: flex;
+    width: fit-content;
+    margin: 5px auto 5px 3px;
+    transition: 0.1s ease-in-out;
+    cursor: pointer;
+}
+
+.checkbox {
+    width: 1.5em;
+    outline: none;
+    margin: 0 5px 0 0;
+    cursor: pointer;
+}
+
+.checkbox-text {
+    font-size: 0.9em;
+    line-height: 30px;
+    height: max-content;
+}
+
+
+.auth-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 95%;
+}
+
+.auth_btn {
+    max-width: 170px;
+    display: flex;
+}
+
+.auth_btn:hover {
+    filter: saturate(1);
+    border: 2px solid #d0d0d0;
+}
+
+.auth_img {
+    min-width: 24px;
+    min-height: 24px;
+    margin-right: 10px;
+}
+
+.auth_text {
+    width: 100%;
+    text-align: left;
+    margin-bottom: 5px;
+    font-size: 0.725em;
+    line-height: 2;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.auth_btn:hover > .auth_text {
+    color: #00588c;
+}

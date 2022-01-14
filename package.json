@@ -1,0 +1,10 @@
+{
+  "name": "PokemonList",
+  "version": "1.0.0",
+  "scripts": {
+    "install": "./build.sh",
+    "start": "./run.sh"
+  },
+  "dependencies": {
+  }
+}

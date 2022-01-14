@@ -1,0 +1,68 @@
+header {
+    width: 100%;
+    margin: 0 auto 10px;
+    padding: 2px 0;
+    background: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(10px);
+    z-index: 2;
+}
+
+.search {
+    display: flex;
+    justify-content: space-between;
+    width: 860px;
+    margin: 0 auto;
+}
+
+.search-input {
+    border: 1px solid grey;
+    outline: none;
+    height: 35px;
+    background: 2px center white url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABmJLR0QA/wD/AP+gvaeTAAAC3ElEQVRoge2ZvWtTURjGf3WoEYMgIppBC23BQicXwcF8GLq4OraWglAU+j9YdPBjd9dBEDeTkLbgoi62ilutbn4sSuwgFTWJGIeTlPCek3tzbt6bWMwPDvSk3Od5nxzu+QoMGRILIz0+nwIuABlgGhgDDjX/9w34AGwCT4Ey8LlHP3WyQAn4DTS6bHWgCKQHUK/FJLBK98V3amVgos+17zIPfA8p0KftAHN9TQBcDyjoDXATyAOngIPNNtX87BawFfD8cr9C3OhQwDqQ89A5CzzvoBV7mHmHaRVYJNqMNwJcaWpI3VmFep1MYr8TX4FzCtppYFto7wDjCtoWcnaqohOiRQaoCY+Soj5g1gk59IvaJsBVh4/ml0VJiL+g912AixFgQ3gVtMRTmFW4XTyjJe4gJ7zqwDEN4ctCeFNDNIS3wnPBV2Cf4zP57asNdQCPRT/rK+AKMi36T3xFIyA9ZA2huIKMif4nX9EIfAypIRJy1U1qiIaQFJ6/fAVcIyKJY9qVyDrqvQqA2Sq0k/IVjYD0qPgKuIK8F/0TvqIROCn6X3wFXEHkujHjKxoB6fFaQ1QuiFsaoiG8E54XNUSPY29RvBcoD/LCqwoc0RIvCvF14ts0vhJe9zUN0kK8gTnZabPk8DmtbVIWBjV076Ry2AerB4r6u0xg1pR2o210tvRZ7KNuBTiqoO1kDnvoa5iTXdTLhyXskWgAz4DR3kvuzLLDtAG8BM576OSxX2zZykBCq3AXncI0MIei25hFbQqzAUw2/54B7mCvE0GtQMwjM4v9zsTVisD+OMOMY19M+LY/wCNgbdBhwFzZFLB3AEHtJ/AQONPUSAArIc+U+hEGzG3HAnAP8/JXMFuMH5iT5QZwF7gEHHY8/0+F6ZVR7C2RbCvEPJtp0U2YVYZh+s9/F2YNODCoAn3oZjbr+++PUQkamWsDrCsSrjB7LkSL9jB7NkSLBDH+WDpkSAB/AT5+sT1GQO1MAAAAAElFTkSuQmCC") no-repeat;
+    object-fit: contain;
+    transition: 0.1s cubic-bezier(0.15, 0.15, 0.7, 1);
+    background-size: 25px;
+    box-shadow: inset 0 0 1px;
+    width: 170px;
+    cursor: text;
+    border-radius: 10px;
+    background-position-x: 2px;
+    padding-left: 35px;
+    font-size: 0.9em;
+    position: relative;
+    left: 349px
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+}
+
+.showFavorites {
+    width: 26px;
+    height: 26px;
+    background: url('https://cdn-icons-png.flaticon.com/64/1828/1828857.png') center/contain no-repeat;
+    background-size: 38px;
+    border-radius: 5px;
+}
+
+.hideFavorites {
+    width: 20px;
+    height: 20px;
+    background: url('https://cdn-icons-png.flaticon.com/64/1828/1828970.png') center/contain no-repeat;
+    margin: 0 3px;
+}
+
+.userName {
+    display: flex;
+    flex-direction: column;
+    line-height: 20px;
+    margin: 0 6px;
+    text-align: right;
+}
+
+.exit {
+    text-align: center;
+    line-height: 20px;
+    cursor: pointer;
+}

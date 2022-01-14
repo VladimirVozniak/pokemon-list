@@ -1,0 +1,90 @@
+.tab {
+    background: #e7e7e7;
+    border: 2px solid #868686;
+    width: 50px;
+    height: 30px;
+    color: #4b4b4b;
+    box-shadow: inset -10px 0 5px -10px rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+    font-weight: bold;
+    text-align: center;
+    padding-top: 3px;
+    padding-right: 3px;
+    user-select: none;
+    position: relative;
+    left: 5px;
+    transition: 100ms ease-out;
+}
+
+.tab:nth-child(1) {
+    margin-bottom: 5px;
+}
+
+.tab:nth-child(2) {
+    border-radius: 4px 0 0 0;
+}
+
+.tab:nth-child(3) {
+    border-top: none;
+    border-bottom: none;
+    padding-top: 5px;
+}
+
+.tab:nth-child(3) > p {
+    line-height: 33px;
+}
+
+.tab:nth-child(4) {
+    border-radius: 0 0 0 4px;
+}
+
+.tab:hover {
+    background: #f3f3f3;
+}
+
+.tab-active {
+    background: white;
+    left: 0;
+    border-radius: 4px 0 0 4px !important;
+    padding-right: 0;
+}
+
+.tab-active:hover {
+    cursor: default;
+    background: white;
+}
+
+.favoriteOff {
+    width: 50px;
+    border-radius: 4px;
+    left: 28px
+}
+
+.favoriteOn {
+    background: #ffff76;
+    left: 18px;
+    border-radius: 4px;
+}
+
+.favorite_icon {
+    position: relative;
+    top: -2px;
+    left: -7px;
+    transform: scale(0.8);
+    transition: 100ms ease-in-out;
+    fill: gray;
+    cursor: pointer;
+}
+
+.tab:nth-child(1):hover {
+    left: 24px;
+    background: #fff9b2
+}
+
+.tab:nth-child(1):hover > .favorite_icon {
+    fill: #9c9626;
+}
+
+.favorite_iconOn {
+    fill: #989000
+}
