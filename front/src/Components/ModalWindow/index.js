@@ -9,7 +9,7 @@ import {PokemonId} from "./PokemonId";
 import {PokemonImg} from "./PokemonImg";
 
 const ModalWindow = () => {
-    const [tab, setTab] = useState('INFO')
+    const [tab, setTab] = useState("INFO")
     const favoritePokemons = useSelector(state => state.profile.favoritePokemons)
     const popupInfo = useSelector(state => state.info.popupInfo)
     const showInfo = useSelector(state => state.info.show)
@@ -22,26 +22,26 @@ const ModalWindow = () => {
     }
 
     return (
-        <div className={`pokemon-info ${showInfo ? 'pokemon-infoOn' : 'pokemon-infoOff'}`}>
+        <div className={`pokemon-info ${showInfo ? "pokemon-infoOn" : "pokemon-infoOff"}`}>
             <button
-                className='close'
+                className="close"
                 onClick={() => dispatch(popInfo(false))}
             />
-            <div className='tabs'>
-                <Tab type='checkbox'
+            <div className="tabs">
+                <Tab type="checkbox"
                      favoritePokemons={favoritePokemons}
                      pokemon={pokemon}
                 />
-                <Tab type='tab' name='INFO' tab={tab} setTab={() => handleTab('INFO')}/>
-                <Tab type='tab' name='ABL' tab={tab} setTab={() => handleTab('ABL')}/>
-                <Tab type='tab' name='STAT' tab={tab} setTab={() => handleTab('STAT')}/>
+                <Tab type="tab" name="INFO" tab={tab} setTab={() => handleTab("INFO")}/>
+                <Tab type="tab" name="ABL" tab={tab} setTab={() => handleTab("ABL")}/>
+                <Tab type="tab" name="STAT" tab={tab} setTab={() => handleTab("STAT")}/>
             </div>
-            <div className='pokemon-info_container'>
-                <div className='pokemon-info_container1'>
+            <div className="pokemon-info_container">
+                <div className="pokemon-info_container1">
                     <PokemonImg popupInfo={popupInfo} favoritePokemons={favoritePokemons} id={popupInfo.id}/>
                     <PokemonId popupInfo={popupInfo}/>
                 </div>
-                <div className='pokemon-info_container2'>
+                <div className="pokemon-info_container2">
                     <PokemonName popupInfo={popupInfo}/>
                     <Description popupInfo={popupInfo} tab={tab}/>
                 </div>

@@ -15,6 +15,6 @@ export const searchByTags = async (selectedTags) => {
         }
         return variousTypesPokemon
     } catch (e) {
-        message.error('Failed to get Pokemon by tags', 3)
+        message.error("Failed to get Pokemon by tags", 3)
     }
 }

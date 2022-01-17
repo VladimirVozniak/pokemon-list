@@ -7,18 +7,19 @@ import {store} from "./Redux";
 import LogIn from "./Components/Login";
 import {BrowserRouter} from "react-router-dom";
 import {Route, Routes} from "react-router";
-require('dotenv').config()
+
+require("dotenv").config()
 
 ReactDOM.render(
     <BrowserRouter>
         <Provider store={store}>
             <Routes>
-                <Route path={'/'} element={<Main/>}/>
-                <Route path={'/login'} element={<LogIn/>}/>
+                <Route path={"/"} element={<Main/>}/>
+                <Route path={"/login"} element={<LogIn/>}/>
             </Routes>
         </Provider>
     </BrowserRouter>,
-    document.getElementById('root')
+    document.getElementById("root")
 );
 
 // If you want to start measuring performance in your app, pass a function

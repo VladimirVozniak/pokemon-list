@@ -7,7 +7,7 @@ const handleChangeTag = (tag, checked, selectedTags) => {
             const nextSelectedTags = checked ? [...selectedTags, tag] : selectedTags.filter(t => t !== tag)
             dispatch(newSelectedTags(nextSelectedTags))
         } catch (e) {
-            message.error('There was a problem with tag selection', 3)
+            message.error("There was a problem with tag selection", 3)
             console.log(e)
         }
     }

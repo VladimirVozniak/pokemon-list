@@ -9,8 +9,8 @@ import login from "../../Redux/login";
 const Tags = () => {
     const {CheckableTag} = Tag;
     const InitialTags = [
-        'normal', 'fighting', 'flying', 'poison', 'ground', 'rock', 'bug', 'ghost', 'steel',
-        'fire', 'water', 'grass', 'electric', 'psychic', 'ice', 'dragon', 'dark', 'fairy'
+        "normal", "fighting", "flying", "poison", "ground", "rock", "bug", "ghost", "steel",
+        "fire", "water", "grass", "electric", "psychic", "ice", "dragon", "dark", "fairy"
     ]
     const selectedTags = useSelector(state => state.tags.selectedTags)
     const pokemonOffset = useSelector(state => state.pagination.pokemonOffset)

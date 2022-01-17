@@ -9,7 +9,7 @@ export const searchAllPokemons = async (pageSize, pokemonOffset) => {
         pokName.data.results.forEach(elem => searchResultBuffer.push(elem))
 
         return searchResultBuffer
-    }catch (e) {
-        message.error('Failed to get data about all Pokemon', 3)
+    } catch (e) {
+        message.error("Failed to get data about all Pokemon", 3)
     }
 }

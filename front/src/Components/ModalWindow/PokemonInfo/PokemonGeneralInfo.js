@@ -5,7 +5,7 @@ export const PokemonGeneralInfo = (props) => {
             Types: {generalInfo.types.reduce(() => {
             const types = []
             generalInfo.types.map(elem => types.push(elem.type))
-            return types.length === 1 ? types : types.join(', ')
+            return types.length === 1 ? types : types.join(", ")
         }, [])}
             <br/>
             Weight: {generalInfo.weight}

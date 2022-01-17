@@ -3,8 +3,8 @@ import {createSlice} from "@reduxjs/toolkit";
 const toolkitSlice = createSlice({
     name: "login",
     initialState: {
-        username: '',
-        password: '',
+        username: "",
+        password: "",
         rememberMe: false
     },
     reducers: {

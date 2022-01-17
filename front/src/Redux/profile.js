@@ -4,8 +4,8 @@ import {createSlice} from "@reduxjs/toolkit";
 const toolkitSlice = createSlice({
     name: "profile",
     initialState: {
-        username: '',
-        favoritePokemons: [],
+        username: "",
+        favoritePokemons: []
     },
     reducers: {
         changeUsername(state, action) {
@@ -19,7 +19,7 @@ const toolkitSlice = createSlice({
         },
         removeFavoritePokemons(state, action) {
             state.favoritePokemons = state.favoritePokemons.filter(elem => elem.id !== action.payload)
-        },
+        }
     }
 })
 

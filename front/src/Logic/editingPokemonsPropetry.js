@@ -15,9 +15,9 @@ export const editingPokemonsProperty = (pokemonList, displayOnlyFavorites) => {
         // id в формате 000
         let formatId = elem.url.match(numberPattern)[1]
         if (formatId < 10)
-            formatId = '00' + formatId
+            formatId = "00" + formatId
         else if (formatId < 100)
-            formatId = '0' + formatId
+            formatId = "0" + formatId
 
         pokemonList[index] = {
             id: formatId,

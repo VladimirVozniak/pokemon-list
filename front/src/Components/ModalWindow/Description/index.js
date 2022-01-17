@@ -6,12 +6,12 @@ export const Description = (props) => {
     const {popupInfo, tab} = props
 
     return (
-        <p className='description'>
+        <p className="description">
             {Object.keys(popupInfo).length > 0 && (() => {
                     switch (tab) {
-                        case 'ABL':
+                        case "ABL":
                             return <PokemonAbilities pokemonInfo={popupInfo}/>
-                        case 'STAT':
+                        case "STAT":
                             return <PokemonStats pokemonInfo={popupInfo}/>
                         default:
                             return <PokemonGeneralInfo pokemonInfo={popupInfo}/>

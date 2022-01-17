@@ -33,7 +33,7 @@ export const pokemonInfo = async (id) => {
             stats,
             abilities
         }
-    }catch (e) {
-        message.error('There was a problem getting more information about a Pokemon', 5)
+    } catch (e) {
+        message.error("There was a problem getting more information about a Pokemon", 5)
     }
 }

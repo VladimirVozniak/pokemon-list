@@ -8,7 +8,7 @@ const toolkitSlice = createSlice({
     reducers: {
         newSelectedTags(state, action) {
             state.selectedTags = action.payload
-        },
+        }
     }
 })
 

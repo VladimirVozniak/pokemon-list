@@ -8,7 +8,7 @@ import {notFoundPokemon} from "../Logic/notFoundPokemon";
 import {editingPokemonsProperty} from "../Logic/editingPokemonsPropetry";
 import {cropArrayPokemons} from "../Logic/cropArrayPokemons";
 
-const uniqBy = require('lodash.uniqby');
+const uniqBy = require("lodash.uniqby");
 
 export const fetchData = (pokemonOffset, pageSize, selectedTags, searchInput, displayOnlyFavorites, favoritePokemons) => {
     return async dispatch => {
@@ -18,7 +18,7 @@ export const fetchData = (pokemonOffset, pageSize, selectedTags, searchInput, di
         const checkType = /^(0|[1-9]\d*)$/.test(searchInput)
 
         dispatch(loadData(true))
-        if (searchInput !== '') {
+        if (searchInput !== "") {
             if (checkType) {
                 //поиск по id
                 try {
@@ -95,7 +95,7 @@ export const fetchData = (pokemonOffset, pageSize, selectedTags, searchInput, di
             let pokemonList = []
 
             if (!defaultSizePokemon) {
-                unduplicated = uniqBy(searchResultBuffer, 'name')
+                unduplicated = uniqBy(searchResultBuffer, "name")
                 pokemonList = cropArrayPokemons(unduplicated, pokemonOffset, pageSize, displayOnlyFavorites)
             }
 

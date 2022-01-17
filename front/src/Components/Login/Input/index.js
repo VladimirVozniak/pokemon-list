@@ -7,9 +7,9 @@ export const Input = (props) => {
 
     return (
         <input
-            className='input-text'
+            className="input-text"
             type={type}
-            placeholder={type === 'password' ? 'Password' : 'Nickname'}
-            onKeyUp={e => type === 'password' ? dispatch(changePassword(e.target.value)) : dispatch(changeUsername(e.target.value))}/>
+            placeholder={type === "password" ? "Password" : "Nickname"}
+            onKeyUp={e => type === "password" ? dispatch(changePassword(e.target.value)) : dispatch(changeUsername(e.target.value))}/>
     )
 }

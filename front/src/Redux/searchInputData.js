@@ -3,12 +3,12 @@ import {createSlice} from "@reduxjs/toolkit";
 const toolkitSlice = createSlice({
     name: "search",
     initialState: {
-        inputData: '',
+        inputData: ""
     },
     reducers: {
         changeInputData(state, action) {
             state.inputData = action.payload
-        },
+        }
     }
 })
 

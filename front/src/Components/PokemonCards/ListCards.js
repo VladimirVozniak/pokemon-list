@@ -16,34 +16,34 @@ export const ListCards = () => {
     const dispatch = useDispatch()
 
     useEffect(() => {
-        username !== 'Guest' && dispatch(getFavoritePokemons())
+        username !== "Guest" && dispatch(getFavoritePokemons())
     }, [dispatch, username])
 
     return (
         <Spin spinning={loading} delay={50} wrapperClassName="list-card-loading">
-            <div className={`list-cards ${pokemonArray.length && 'list-cards_loaded'}`}>
-                {pokemonArray.map((elem, index) => elem.name === 'Not found' ?
+            <div className={`list-cards ${pokemonArray.length && "list-cards_loaded"}`}>
+                {pokemonArray.map((elem, index) => elem.name === "Not found" ?
                     <PokemonNotFound key={0} elem={elem}/> :
                     <Spin spinning={elem.loading} key={index} wrapperClassName="cardLoading">
                         <div
                             className="card"
                             onMouseEnter={() => dispatch(hoverCardOn(elem.id))}
-                            onMouseLeave={() => loading ? '' : dispatch(hoverCardOff(elem.id))}
+                            onMouseLeave={() => loading ? "" : dispatch(hoverCardOff(elem.id))}
                         >
                             <img
-                                className={`img ${elem.id > 1000 ? 'img-extra' : ''} ${elem.hover ? 'imgOn' : 'imgOff'}`}
+                                className={`img ${elem.id > 1000 ? "img-extra" : ""} ${elem.hover ? "imgOn" : "imgOff"}`}
                                 src={elem.pic}
                                 onClick={async () => {
                                     await dispatch(showPopupInfo(true, elem))
                                 }}/>
                             <div
-                                className={`nameArea ${favoritePokemons.find(e => e.id === elem.id) && 'nameArea-favorite'} ${elem.hover ? 'nameAreaOn' : 'nameAreaOff'}`}>
+                                className={`nameArea ${favoritePokemons.find(e => e.id === elem.id) && "nameArea-favorite"} ${elem.hover ? "nameAreaOn" : "nameAreaOff"}`}>
                                 <p style={{fontSize: dynamicFontSize(elem.name)}}
-                                   className={`pokemon-name ${elem.hover ? 'pokemon-nameOn' : 'pokemon-nameOff'}`}
+                                   className={`pokemon-name ${elem.hover ? "pokemon-nameOn" : "pokemon-nameOff"}`}
                                 >{elem.name}</p>
-                                <p className={`readMore ${elem.hover ? 'readMoreOn' : 'readMoreOff'}`}
-                                   onClick={async () => favoritePokemons.find(e => e.id === elem.id) ? dispatch(changeFavoritePokemons(elem, 'remove')) : dispatch(changeFavoritePokemons(elem, 'add'))}
-                                >{`${favoritePokemons.find(e => e.id === elem.id) ? 'Delete in ★' : 'Add to ★'}`}</p>
+                                <p className={`readMore ${elem.hover ? "readMoreOn" : "readMoreOff"}`}
+                                   onClick={async () => favoritePokemons.find(e => e.id === elem.id) ? dispatch(changeFavoritePokemons(elem, "remove")) : dispatch(changeFavoritePokemons(elem, "add"))}
+                                >{`${favoritePokemons.find(e => e.id === elem.id) ? "Delete in ★" : "Add to ★"}`}</p>
                             </div>
                         </div>
                     </Spin>

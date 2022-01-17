@@ -10,14 +10,14 @@ module.exports.login = async (req, res) => {
             return res.status(400).json({massage: `User ${username} not found`})
         }
         if (!bcrypt.compareSync(password, user.password)) {
-            return res.status(400).json({massage: 'Wrong password entered'})
+            return res.status(400).json({massage: "Wrong password entered"})
         }
         const token = generateAccessToken(user._id)
-        res.cookie('token', token, {
-            path: '/',
+        res.cookie("token", token, {
+            path: "/",
             expires: rememberMe ? new Date(new Date().getTime() + 24 * 60 * 60 * 1000) : false
-        }).cookie('name', user.username, {
-            path: '/',
+        }).cookie("name", user.username, {
+            path: "/",
             expires: rememberMe ? new Date(new Date().getTime() + 24 * 60 * 60 * 1000) : false
         }).send()
     } catch (e) {
@@ -38,11 +38,11 @@ module.exports.auth = async (req, res) => {
 
         const token = generateAccessToken(userId._id)
 
-        res.cookie('token', token, {
-            path: '/',
+        res.cookie("token", token, {
+            path: "/",
             expires: new Date(new Date().getTime() + 24 * 60 * 60 * 1000)
-        }).cookie('name', mail, {
-            path: '/',
+        }).cookie("name", mail, {
+            path: "/",
             expires: new Date(new Date().getTime() + 24 * 60 * 60 * 1000)
         }).send()
     } catch (e) {
@@ -55,7 +55,7 @@ module.exports.registration = async (req, res, next) => {
         const {username, password} = req.body
 
         if (await User.findOne({username})) {
-            return res.status(400).json({message: 'This user already exists'})
+            return res.status(400).json({message: "This user already exists"})
         }
         const hashPassword = bcrypt.hashSync(password, 7)
         await User.create({username, password: hashPassword},

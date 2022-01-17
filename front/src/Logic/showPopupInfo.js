@@ -18,7 +18,7 @@ const showPopupInfo = (animCard, pokemon) => {
             dispatch(showInfo(animCard))
         } catch (e) {
             dispatch(showInfo(false))
-            message.error('There was a problem opening or closing the modal window', 3)
+            message.error("There was a problem opening or closing the modal window", 3)
             console.log(e)
         }
     }

@@ -5,8 +5,8 @@ const cardScheme = new Schema({
     id: String,
     name: String,
     pic: String,
-    types:Array,
-    user_id: mongoose.ObjectId,
+    types: Array,
+    user_id: mongoose.ObjectId
 }, {versionKey: false})
 
 module.exports = model("cards", cardScheme)

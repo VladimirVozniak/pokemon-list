@@ -8,18 +8,18 @@ const {
 const {
     login,
     auth,
-    registration,
+    registration
 } = require("../controllers/userController")
 
-router.post('/checkToken', checkToken)
+router.post("/checkToken", checkToken)
 
 // Card routes
-router.post('/getCard', checkToken, getCard)
-router.post('/changeCard', checkToken, changeCard);
+router.post("/getCard", checkToken, getCard)
+router.post("/changeCard", checkToken, changeCard);
 
 //User routes
-router.post('/login', login)
-router.post('/auth', auth)
-router.post('/newUser', registration, login)
+router.post("/login", login)
+router.post("/auth", auth)
+router.post("/newUser", registration, login)
 
 module.exports = router;

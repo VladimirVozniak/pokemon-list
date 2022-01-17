@@ -13,7 +13,7 @@ export const AuthList = () => {
                 onSuccess={async data => await signInViaAuth(data)}
                 onFailure={(err) => {
                     console.error(err)
-                    message.error('Google login error', 3)
+                    message.error("Google login error", 3)
                 }}
                 isSignedIn={false}
                 render={renderProps => (

@@ -11,20 +11,20 @@ const Search = () => {
 
     return (
         <header>
-            <div className='search'>
-                <input className='search-input' placeholder='ID or name pokemon'
+            <div className="search">
+                <input className="search-input" placeholder="ID or name pokemon"
                        onKeyUp={(key) => {
                            dispatch(changeInputData(key.target.value))
                        }}
                 />
-                <div className='profile'>
-                    <div className={favoriteOn ? 'showFavorites' : 'hideFavorites'}
+                <div className="profile">
+                    <div className={favoriteOn ? "showFavorites" : "hideFavorites"}
                          onClick={() => {
                              dispatch(showFavoritesArray())
                          }}/>
 
-                        <p className='userName'>{`${username} ${username==='Guest' ? '(data will not be saved)':''}`} |</p>
-                        <p className='exit' onClick={()=>exitAccount()}>Exit</p>
+                    <p className="userName">{`${username} ${username === "Guest" ? "(data will not be saved)" : ""}`} |</p>
+                    <p className="exit" onClick={() => exitAccount()}>Exit</p>
                 </div>
             </div>
         </header>

@@ -1,7 +1,7 @@
 import {editingPokemonsProperty} from "./editingPokemonsPropetry";
 
 export const cropArrayPokemons = (customArrayPokemon, page, countPokemon, displayOnlyFavorites) => {
-    editingPokemonsProperty(customArrayPokemon,displayOnlyFavorites)
+    editingPokemonsProperty(customArrayPokemon, displayOnlyFavorites)
 
     const sortedArray = customArrayPokemon.sort((a, b) => a.id - b.id)
 

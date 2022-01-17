@@ -3,10 +3,10 @@ export const PokemonNotFound = (props) => {
 
     return (
         <div>
-            <div className='card'>
-                <img className='img notFound' src={elem.pic}/>
-                <div className='nameArea'>
-                    <p className='pokemon-name'>{elem.name}</p>
+            <div className="card">
+                <img className="img notFound" src={elem.pic}/>
+                <div className="nameArea">
+                    <p className="pokemon-name">{elem.name}</p>
                 </div>
             </div>
         </div>

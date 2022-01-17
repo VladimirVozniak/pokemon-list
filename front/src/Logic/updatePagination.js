@@ -8,7 +8,7 @@ export const updatePagination = (page, pageSize) => {
             dispatch(newPage(pageSize))
             dispatch(newPageSize(newPage1))
         } catch (e) {
-            message.error('There was a problem with tag selection', 3)
+            message.error("There was a problem with tag selection", 3)
             console.log(e)
         }
     }
