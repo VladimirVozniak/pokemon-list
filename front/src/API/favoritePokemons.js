@@ -1,6 +1,7 @@
 import axios from "axios";
 import {addFavoritePokemons, allFavoritePokemons, removeFavoritePokemons} from "../Redux/profile";
 import {exitAccount} from "../Logic/exitAccount";
+import {endLoading, startLoading} from "../Redux/listCard";
 
 export const getFavoritePokemons = () => {
     return async dispatch => {
@@ -24,6 +25,7 @@ export const getFavoritePokemons = () => {
 export const changeFavoritePokemons = (pokemon, action) => {
     return async dispatch => {
         try {
+            dispatch(startLoading(pokemon.id))
             const pokemonInfo = (await axios.get(process.env.REACT_APP_URL_POKEMON + Number(pokemon.id))).data
             let types = []
 
@@ -46,7 +48,8 @@ export const changeFavoritePokemons = (pokemon, action) => {
             else
                 throw new Error()
         } catch (e) {
-            exitAccount()
+            console.log(e)
+            // exitAccount()
         }
     }
 }

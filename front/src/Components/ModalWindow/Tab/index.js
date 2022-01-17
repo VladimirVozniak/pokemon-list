@@ -1,8 +1,9 @@
 import "./style.css"
 import {useDispatch} from "react-redux";
 import {changeFavoritePokemons} from "../../../API/favoritePokemons";
+import {memo} from "react";
 
-export const Tab = (props) => {
+export const Tab = memo((props) => {
     const {
         tab, name, setTab, type,
         favoritePokemons, pokemon
@@ -27,4 +28,4 @@ export const Tab = (props) => {
             }
         </>
     )
-}
+})

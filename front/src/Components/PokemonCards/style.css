@@ -131,3 +131,15 @@ p {
 .ant-spin-nested-loading > div > .ant-spin {
     max-height: none;
 }
+
+.list-card-loading {
+
+}
+
+.cardLoading > .ant-spin-container::after {
+    transition: none;
+}
+
+.cardLoading > .ant-spin-blur::after {
+    opacity: 0.3;
+}

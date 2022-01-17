@@ -1,9 +1,19 @@
-import {hoverCardToggle} from "../Redux/listCard";
+import {hoverCardToggleOff, hoverCardToggleOn} from "../Redux/listCard";
 
-export const hoverCard = (id, action) => {
+export const hoverCardOn = (id) => {
     return dispatch => {
         try {
-            dispatch(hoverCardToggle([id, action]))
+            dispatch(hoverCardToggleOn(id))
+        } catch (e) {
+            console.log(e)
+        }
+    }
+}
+
+export const hoverCardOff = (id) => {
+    return dispatch => {
+        try {
+            dispatch(hoverCardToggleOff(id))
         } catch (e) {
             console.log(e)
         }

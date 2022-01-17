@@ -2,6 +2,7 @@ import {Pagination} from "antd";
 import "./style.css"
 import {useDispatch, useSelector} from "react-redux";
 import {updatePagination} from "../../Logic/updatePagination";
+import {memo} from "react";
 
 const PageSwitching = () => {
     const bufferPokemonArray = useSelector(state => state.toolkit.bufferPokemonArray)
@@ -23,4 +24,4 @@ const PageSwitching = () => {
     )
 }
 
-export default PageSwitching
+export default memo(PageSwitching)

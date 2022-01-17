@@ -1,4 +1,4 @@
-import {hoverCardToggle, hoverCardOff} from "../Redux/listCard";
+import {hoverCardOff, hoverCardToggleOn, loadData} from "../Redux/listCard";
 import {addCurrentPokemon, fetchInfo, showInfo} from "../Redux/popupInfo";
 import {pokemonInfo} from "../API/pokemonInfo";
 import {message} from "antd";
@@ -6,14 +6,16 @@ import {message} from "antd";
 const showPopupInfo = (animCard, pokemon) => {
     return async dispatch => {
         try {
-            dispatch(showInfo())
             if (animCard) {
-                setTimeout(() => dispatch(hoverCardToggle([pokemon.id, true])), 300)
+                dispatch(loadData(true))
                 const generalPokInfo = Object.assign({}, await pokemonInfo(pokemon.id), pokemon)
+                dispatch(hoverCardToggleOn(pokemon.id))
                 dispatch(fetchInfo(generalPokInfo))
                 dispatch(addCurrentPokemon(pokemon))
+                setTimeout(() => dispatch(loadData(false)), 200)
             } else
                 dispatch(hoverCardOff())
+            dispatch(showInfo())
         } catch (e) {
             dispatch(showInfo(false))
             message.error('There was a problem opening or closing the modal window', 3)

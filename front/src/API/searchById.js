@@ -10,7 +10,7 @@ export const searchById = async (searchInput) => {
             name: pokId.name,
             url: process.env.REACT_APP_URL_POKEMON + pokId.id
         }
-    }catch(e) {
+    } catch (e) {
         message.error('Failed to get Pokemon', 3)
     }
 }

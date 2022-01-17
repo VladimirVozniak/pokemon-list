@@ -2,7 +2,7 @@ import "./style.css";
 import {Spin, Tag} from "antd";
 import {useDispatch, useSelector} from "react-redux";
 import handleChangeTag from "../../Logic/handleChangeTag";
-import {useEffect} from "react";
+import {memo, useEffect} from "react";
 import {fetchData} from "../../API/fetchData";
 
 const Tags = () => {
@@ -50,4 +50,4 @@ const Tags = () => {
     )
 }
 
-export default Tags
+export default memo(Tags)

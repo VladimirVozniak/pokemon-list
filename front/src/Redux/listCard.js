@@ -16,9 +16,13 @@ const toolkitSlice = createSlice({
         arrayPokemon(state, action) {
             state.pokemonArray = action.payload
         },
-        hoverCardToggle(state, action) {
-            state.pokemonArray = state.pokemonArray.map(elem => elem.id === action.payload[0] ? {
-                ...elem, hover: action.payload[1]
+        hoverCardToggleOn(state, action) {
+            state.pokemonArray = state.pokemonArray.map(elem => elem.id === action.payload ? {
+                ...elem, hover: true
+            } : elem)
+        }, hoverCardToggleOff(state, action) {
+            state.pokemonArray = state.pokemonArray.map(elem => elem.id === action.payload ? {
+                ...elem, hover: false
             } : elem)
         },
         hoverCardOff(state) {
@@ -32,12 +36,23 @@ const toolkitSlice = createSlice({
         },
         showFavoritesArray(state) {
             state.showFavoritesArray = !state.showFavoritesArray
+        },
+        startLoading(state, action) {
+            state.pokemonArray = state.pokemonArray.map(elem => elem.id === action.payload ? {
+                ...elem, loading: true
+            } : elem)
+        },
+        endLoading(state, action) {
+            state.pokemonArray = state.pokemonArray.map(elem => elem.id === action.payload ? {
+                ...elem, loading: false
+            } : elem)
         }
     }
 })
 
 export const {
-    bufferPokemonArray, arrayPokemon, hoverCardToggle,
-    hoverCardOff, notFound, loadData, showFavoritesArray
+    bufferPokemonArray, arrayPokemon, hoverCardToggleOn, hoverCardToggleOff,
+    hoverCardOff, notFound, loadData, showFavoritesArray,
+    startLoading, endLoading
 } = toolkitSlice.actions
 export default toolkitSlice.reducer

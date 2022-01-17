@@ -7,6 +7,7 @@ export const editingPokemonsProperty = (pokemonList, displayOnlyFavorites) => {
                 id: elem.id,
                 name: elem.name,
                 pic: elem.pic,
+                loading: false
             }
         })
 
@@ -22,6 +23,7 @@ export const editingPokemonsProperty = (pokemonList, displayOnlyFavorites) => {
             id: formatId,
             name: elem.name,
             pic: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${elem.url.match(numberPattern)[1]}.png`,
+            loading: false
         }
     })
 }
