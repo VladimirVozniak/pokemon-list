@@ -4,6 +4,7 @@ import {useDispatch, useSelector} from "react-redux";
 import handleChangeTag from "../../Logic/handleChangeTag";
 import {memo, useEffect} from "react";
 import {fetchData} from "../../API/fetchData";
+import login from "../../Redux/login";
 
 const Tags = () => {
     const {CheckableTag} = Tag;
@@ -20,19 +21,19 @@ const Tags = () => {
     const dispatch = useDispatch()
 
     const searchById = /^(0|[1-9]\d*)$/.test(searchInput)
+    const img = <img id="lockTags-img" src="https://img.icons8.com/material/64/000000/lock-2--v1.png" alt=""/>
 
     useEffect(() => {
         dispatch(fetchData(pokemonOffset, pageSize, selectedTags, searchInput, displayOnlyFavorites, favoritePokemons))
-    }, [dispatch, searchInput, selectedTags, pokemonOffset, pageSize, displayOnlyFavorites, favoritePokemons]);
+    }, [dispatch, searchInput, selectedTags, pokemonOffset, pageSize, displayOnlyFavorites, displayOnlyFavorites && favoritePokemons]);
 
-    const img = <img id='lockTags-img' src="https://img.icons8.com/material/64/000000/lock-2--v1.png" alt=''/>
 
     return (
         <Spin spinning={searchById} indicator={img}
-              tip='Tags are blocked or inactive because search by ID is used!'>
-            <div className='types'>
+              tip="Tags are blocked or inactive because search by ID is used!">
+            <div className="types">
                 <span style={{marginRight: 8}}>Types:</span>
-                <div className='listTypes'>
+                <div className="listTypes">
                     {InitialTags.map(tag => (
                         <CheckableTag
                             key={tag}
@@ -41,7 +42,7 @@ const Tags = () => {
                                 dispatch(handleChangeTag(tag, checked, selectedTags))
                             }}
                         >
-                            <Tag color='red'>{tag}</Tag>
+                            <Tag color="red">{tag}</Tag>
                         </CheckableTag>
                     ))}
                 </div>

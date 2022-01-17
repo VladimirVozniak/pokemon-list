@@ -48,8 +48,9 @@ export const changeFavoritePokemons = (pokemon, action) => {
             else
                 throw new Error()
         } catch (e) {
-            console.log(e)
-            // exitAccount()
+            exitAccount()
+        } finally {
+            dispatch(endLoading(pokemon.id))
         }
     }
 }

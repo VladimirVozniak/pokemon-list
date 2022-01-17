@@ -15,11 +15,11 @@ function Main() {
     dispatch(changeUsername(getCookie()))
 
     return (
-        <div className='main'>
+        <div className="main">
             <Blackout/>
             <Search/>
             <div className={`background-img ${pokemonArray.length > 0 && 'background-img_loaded'}`}/>
-            <div className='container'>
+            <div className="container">
                 <Tags/>
                 <ListCards/>
                 <PageSwitching/>

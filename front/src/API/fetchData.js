@@ -61,9 +61,9 @@ export const fetchData = (pokemonOffset, pageSize, selectedTags, searchInput, di
         } else if (selectedTags.length > 0) {
             try {
                 //вывод каждого покемона по тегам
-                    searchResultBuffer = displayOnlyFavorites ?
-                        favoritePokemons.filter((elem) => elem.types.find(type => selectedTags.find(tag => tag === type))) :
-                        await searchByTags(selectedTags)
+                searchResultBuffer = displayOnlyFavorites ?
+                    favoritePokemons.filter((elem) => elem.types.find(type => selectedTags.find(tag => tag === type))) :
+                    await searchByTags(selectedTags)
 
                 if (searchResultBuffer.length === 0)
                     throw new Error()

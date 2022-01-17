@@ -15,7 +15,7 @@ const showPopupInfo = (animCard, pokemon) => {
                 setTimeout(() => dispatch(loadData(false)), 200)
             } else
                 dispatch(hoverCardOff())
-            dispatch(showInfo())
+            dispatch(showInfo(animCard))
         } catch (e) {
             dispatch(showInfo(false))
             message.error('There was a problem opening or closing the modal window', 3)
@@ -25,3 +25,6 @@ const showPopupInfo = (animCard, pokemon) => {
 }
 
 export default showPopupInfo
+
+// если у одного из пользователя есть какой-то покемон, то у другого пользователя при выборе этого же покемона вылетает
+// на страницу логина

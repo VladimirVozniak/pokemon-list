@@ -13,7 +13,7 @@ module.exports.changeCard = async (req, res) => {
         const pokemon = req.body.pokemon
         const id = jwt.verify(req.headers.authorization.split('=')[1], secret).id
 
-        if (await Card.findOne({id: pokemon.id}) !== null) {
+        if (await Card.findOne({user_id: id, id: pokemon.id}) !== null) {
             await Card.findOneAndDelete({user_id: id, id: pokemon.id})
             res.send('delete success')
         } else {
