@@ -143,3 +143,13 @@ p {
 .cardLoading > .ant-spin-blur::after {
     opacity: 0.3;
 }
+
+.ant-message {
+    overflow: visible
+}
+
+.custom-message-warning {
+    position: relative;
+    left: -230px;
+    top: -14px;
+}

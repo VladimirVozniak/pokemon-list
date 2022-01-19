@@ -20,7 +20,7 @@ export const ListCards = () => {
     }, [dispatch, username])
 
     return (
-        <Spin spinning={loading} delay={50} wrapperClassName="list-card-loading">
+        <Spin spinning={loading} delay={300} wrapperClassName="list-card-loading">
             <div className={`list-cards ${pokemonArray.length && "list-cards_loaded"}`}>
                 {pokemonArray.map((elem, index) => elem.name === "Not found" ?
                     <PokemonNotFound key={0} elem={elem}/> :
@@ -32,7 +32,7 @@ export const ListCards = () => {
                         >
                             <img
                                 className={`img ${elem.id > 1000 ? "img-extra" : ""} ${elem.hover ? "imgOn" : "imgOff"}`}
-                                src={elem.pic}
+                                src={elem.pic} onError={"https://adminway.ru/images/489t.jpg"}
                                 onClick={async () => {
                                     await dispatch(showPopupInfo(true, elem))
                                 }}/>
@@ -42,7 +42,9 @@ export const ListCards = () => {
                                    className={`pokemon-name ${elem.hover ? "pokemon-nameOn" : "pokemon-nameOff"}`}
                                 >{elem.name}</p>
                                 <p className={`readMore ${elem.hover ? "readMoreOn" : "readMoreOff"}`}
-                                   onClick={async () => favoritePokemons.find(e => e.id === elem.id) ? dispatch(changeFavoritePokemons(elem, "remove")) : dispatch(changeFavoritePokemons(elem, "add"))}
+                                   onClick={async () => favoritePokemons.find(e => e.id === elem.id) ?
+                                       dispatch(changeFavoritePokemons(elem, "remove")) :
+                                       dispatch(changeFavoritePokemons(elem, "add", username))}
                                 >{`${favoritePokemons.find(e => e.id === elem.id) ? "Delete in ★" : "Add to ★"}`}</p>
                             </div>
                         </div>

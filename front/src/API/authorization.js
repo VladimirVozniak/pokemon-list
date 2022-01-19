@@ -2,7 +2,6 @@ import axios from "axios";
 import {changeUsername} from "../Redux/profile";
 import {message} from "antd";
 
-
 export const registration = async (username, password) => {
     try {
         if (username === "" || password.length < 3 || password.length > 10)

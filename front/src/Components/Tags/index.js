@@ -4,7 +4,6 @@ import {useDispatch, useSelector} from "react-redux";
 import handleChangeTag from "../../Logic/handleChangeTag";
 import {memo, useEffect} from "react";
 import {fetchData} from "../../API/fetchData";
-import login from "../../Redux/login";
 
 const Tags = () => {
     const {CheckableTag} = Tag;
@@ -22,10 +21,11 @@ const Tags = () => {
 
     const searchById = /^(0|[1-9]\d*)$/.test(searchInput)
     const img = <img id="lockTags-img" src="https://img.icons8.com/material/64/000000/lock-2--v1.png" alt=""/>
+    const changeActionPokemons = displayOnlyFavorites && favoritePokemons
 
     useEffect(() => {
         dispatch(fetchData(pokemonOffset, pageSize, selectedTags, searchInput, displayOnlyFavorites, favoritePokemons))
-    }, [dispatch, searchInput, selectedTags, pokemonOffset, pageSize, displayOnlyFavorites, displayOnlyFavorites && favoritePokemons]);
+    }, [dispatch, searchInput, selectedTags, pokemonOffset, pageSize, displayOnlyFavorites, changeActionPokemons]);
 
 
     return (
