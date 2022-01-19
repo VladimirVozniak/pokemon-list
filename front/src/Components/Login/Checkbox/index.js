@@ -1,8 +1,8 @@
 export const Checkbox = (props) => {
-    const {checked, changeChecked} = props
+    const {checked, changeChecked, logUp} = props
 
     return (
-        <div className="checkbox-container" onClick={() => changeChecked()}>
+        <div className={`checkbox-container ${logUp && "checkbox-container-reg"}`} onClick={() => changeChecked()}>
             <input
                 type="checkbox"
                 className="checkbox"

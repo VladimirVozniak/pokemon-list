@@ -3,9 +3,11 @@ import {signAsGuest, signInViaAuth} from "../../../API/authorization";
 import {useDispatch} from "react-redux";
 import {message} from "antd";
 
-export const AuthList = () => {
+export const AuthList = (props) => {
+    const {logUp, animation} = props
     const dispatch = useDispatch()
 
+    console.log({animation, logUp})
     return (
         <>
             <GoogleLogin
@@ -17,7 +19,8 @@ export const AuthList = () => {
                 }}
                 isSignedIn={false}
                 render={renderProps => (
-                    <button className="btn auth_btn" onClick={renderProps.onClick}>
+                    <button className={`btn auth_btn ${animation ? logUp ? "auth-reg_btn" : "auth_btn-animation" : ""}`}
+                            onClick={renderProps.onClick}>
                         <div className="auth_img"
                              style={{background: `url(https://img.icons8.com/color/48/000000/google-logo.png) center /contain no-repeat`}}
                         />
@@ -25,7 +28,7 @@ export const AuthList = () => {
                     </button>
                 )}
             />
-            <button className="btn auth_btn" onClick={() => dispatch(signAsGuest())}>
+            <button className={`btn auth_btn ${animation ? logUp ? "auth-reg_btn" : "auth_btn-animation" : ""}`} onClick={() => dispatch(signAsGuest())}>
                 <div className="auth_img"
                      style={{background: `url(https://img.icons8.com/ios/48/000000/who.png) center /contain no-repeat`}}
                 />
