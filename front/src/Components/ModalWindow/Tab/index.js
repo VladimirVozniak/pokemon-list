@@ -1,9 +1,10 @@
 import "./style.css"
-import {useDispatch} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import {changeFavoritePokemons} from "../../../API/favoritePokemons";
 import {memo} from "react";
 
 export const Tab = memo((props) => {
+    const username = useSelector(state => state.profile.username)
     const {
         tab, name, setTab, type,
         favoritePokemons, pokemon
@@ -16,7 +17,9 @@ export const Tab = memo((props) => {
                 <div className={`tab ${tab === name ? "tab-active" : ""}`} onClick={setTab}>{name}</div>
                 :
                 <div className={`tab favoriteOff ${favoritePokemons.find(e => e.id === pokemon.id) && "favoriteOn"}`}
-                     onClick={() => favoritePokemons.find(e => e.id === pokemon.id) ? dispatch(changeFavoritePokemons(pokemon, "remove")) : dispatch(changeFavoritePokemons(pokemon, "add"))}>
+                     onClick={() => favoritePokemons.find(e => e.id === pokemon.id) ?
+                         dispatch(changeFavoritePokemons(pokemon, "remove")) :
+                         dispatch(changeFavoritePokemons(pokemon, "add", username))}>
                     <svg
                         className={`favorite_icon ${favoritePokemons.find(e => e.id === pokemon.id) && "favorite_iconOn"}`}
                         xmlns="http://www.w3.org/2000/svg"

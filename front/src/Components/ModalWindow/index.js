@@ -16,10 +16,7 @@ const ModalWindow = () => {
     const pokemon = useSelector(state => state.info.currentPokemon)
     const dispatch = useDispatch()
 
-
-    const handleTab = (value) => {
-        setTab(value)
-    }
+    const handleTab = (value) => setTab(value)
 
     return (
         <div className={`pokemon-info ${showInfo ? "pokemon-infoOn" : "pokemon-infoOff"}`}>

@@ -21,7 +21,7 @@ const Search = () => {
                     <div className={favoriteOn ? "showFavorites" : "hideFavorites"}
                          onClick={() => dispatch(showFavoritesArray())}
                     />
-                    <p className="userName">{`${username} ${username === "Guest" ? "(data will not be saved)" : ""}`} |</p>
+                    <p className="userName">{`${username}`} |</p>
                     <p className="exit" onClick={() => exitAccount()}>Exit</p>
                 </div>
             </div>

@@ -21,7 +21,7 @@ export const ListCards = () => {
 
     return (
         <Spin spinning={loading} delay={300} wrapperClassName="list-card-loading">
-            <div className={`list-cards ${pokemonArray.length && "list-cards_loaded"}`}>
+            <div className="list-cards">
                 {pokemonArray.map((elem, index) => elem.name === "Not found" ?
                     <PokemonNotFound key={0} elem={elem}/> :
                     <Spin spinning={elem.loading} key={index} wrapperClassName="cardLoading">
@@ -32,7 +32,7 @@ export const ListCards = () => {
                         >
                             <img
                                 className={`img ${elem.id > 1000 ? "img-extra" : ""} ${elem.hover ? "imgOn" : "imgOff"}`}
-                                src={elem.pic} onError={"https://adminway.ru/images/489t.jpg"}
+                                src={elem.pic}
                                 onClick={async () => {
                                     await dispatch(showPopupInfo(true, elem))
                                 }}/>

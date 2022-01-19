@@ -20,13 +20,12 @@ const Tags = () => {
     const dispatch = useDispatch()
 
     const searchById = /^(0|[1-9]\d*)$/.test(searchInput)
-    const img = <img id="lockTags-img" src="https://img.icons8.com/material/64/000000/lock-2--v1.png" alt=""/>
+    const img = <img id="lockTags-img" src="https://img.icons8.com/material/64/000000/lock-2--v1.png"/>
     const changeActionPokemons = displayOnlyFavorites && favoritePokemons
 
     useEffect(() => {
         dispatch(fetchData(pokemonOffset, pageSize, selectedTags, searchInput, displayOnlyFavorites, favoritePokemons))
     }, [dispatch, searchInput, selectedTags, pokemonOffset, pageSize, displayOnlyFavorites, changeActionPokemons]);
-
 
     return (
         <Spin spinning={searchById} indicator={img}
