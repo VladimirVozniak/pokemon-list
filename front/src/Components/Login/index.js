@@ -13,13 +13,15 @@ function LogIn() {
     const [logUp, setLogUp] = useState(false)
     const [animation, setAnimation] = useState(false)
 
+    const data = {username, password, checked, logUp}
+
     return (
-        <div className={`auth-window ${logUp && "auth-window-reg"}`}>
+        <div className="auth-window">
             <h1>{logUp ? "Registration" : "Login"}</h1>
             <div className={`login-methods ${logUp && "login-methods-reg"}`}>
                 <div className="first-login-method">
-                    <Input type="text"/>
-                    <Input type="password"/>
+                    <Input type="text" data={data}/>
+                    <Input type="password" data={data}/>
                     <Checkbox checked={checked} changeChecked={() => setChecked(!checked)} logUp={logUp}/>
                     <button className="btn signIn"
                             onClick={async () => logUp ?
@@ -28,9 +30,7 @@ function LogIn() {
                 </div>
                 <div className={`vertical-dividing-line ${logUp && "vertical-dividing-line-reg"}`}/>
                 <div className={`second-login-method ${logUp && "second-login-method-reg"}`}>
-                    <div className={`auth-list ${logUp && "auth-list-reg"}`}>
-                        <AuthList logUp={logUp} animation={animation}/>
-                    </div>
+                    <AuthList logUp={logUp} animation={animation}/>
                 </div>
             </div>
             <div className="horizontal-dividing-line">

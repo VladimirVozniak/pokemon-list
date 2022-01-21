@@ -1,12 +1,13 @@
 import "./style.css"
 import {useDispatch, useSelector} from "react-redux";
 import popInfo from "../../Logic/showPopupInfo";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import {Tab} from "./Tab";
 import {Description} from "./Description";
 import {PokemonName} from "./PokemonName";
 import {PokemonId} from "./PokemonId";
 import {PokemonImg} from "./PokemonImg";
+import {closePopupViaKeyboard} from "../../Logic/closePopupViaKeyboard";
 
 const ModalWindow = () => {
     const [tab, setTab] = useState("INFO")
@@ -17,6 +18,10 @@ const ModalWindow = () => {
     const dispatch = useDispatch()
 
     const handleTab = (value) => setTab(value)
+
+    useEffect(() => {
+        dispatch(closePopupViaKeyboard())
+    }, [])
 
     return (
         <div className={`pokemon-info ${showInfo ? "pokemon-infoOn" : "pokemon-infoOff"}`}>

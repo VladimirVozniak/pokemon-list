@@ -7,7 +7,6 @@ export const AuthList = (props) => {
     const {logUp, animation} = props
     const dispatch = useDispatch()
 
-    console.log({animation, logUp})
     return (
         <>
             <GoogleLogin
@@ -28,7 +27,8 @@ export const AuthList = (props) => {
                     </button>
                 )}
             />
-            <button className={`btn auth_btn ${animation ? logUp ? "auth-reg_btn" : "auth_btn-animation" : ""}`} onClick={() => dispatch(signAsGuest())}>
+            <button className={`btn auth_btn ${animation ? logUp ? "auth-reg_btn" : "auth_btn-animation" : ""}`}
+                    onClick={() => dispatch(signAsGuest())}>
                 <div className="auth_img"
                      style={{background: `url(https://img.icons8.com/ios/48/000000/who.png) center /contain no-repeat`}}
                 />

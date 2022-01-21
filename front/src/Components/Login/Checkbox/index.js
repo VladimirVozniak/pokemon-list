@@ -2,14 +2,14 @@ export const Checkbox = (props) => {
     const {checked, changeChecked, logUp} = props
 
     return (
-        <div className={`checkbox-container ${logUp && "checkbox-container-reg"}`} onClick={() => changeChecked()}>
+        <label className={`checkbox-container ${logUp && "checkbox-container-reg"}`}>
             <input
                 type="checkbox"
                 className="checkbox"
                 checked={checked}
                 onChange={() => changeChecked()}
             />
-            <p className="checkbox-text">Remember me</p>
-        </div>
+            Remember me
+        </label>
     )
 }
